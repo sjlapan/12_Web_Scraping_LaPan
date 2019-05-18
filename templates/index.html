@@ -3,10 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
   <title>Mars Data</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -14,14 +17,77 @@
 
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      <p><a class="btn btn-primary btn-lg"
+           href="/scrape"
+           role="button">Scrape New Data</a></p>
     </div>
 
     <!-- NASA Info -->
-    <div class="row" id="NASA_Info">
+    <div class="row"
+         id="NASA_Info">
       <div class="col-md-12">
+        <h3 class="heading"><b>Latest Mars News</b></h3>
         <h4 class="heading">{{mars_data.NASA_article_title}}</h4>
-        <small>{{mars_data.NASA_article_text}}</small>
+        <p>{{mars_data.NASA_article_text}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="heading"><b>Featured Mars Image</b></h3>
+        <img src="{{mars_data.jpl_image_url}}" />
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4 class="heading"><b>Current Weather on Mars</b></h4>
+          {{mars_data.Mars_weather_tweet}}
+          <h4 class="heading"><b>Mars Facts</b></h4>
+          <table class="table-sm">{{mars_data.facts_table_html|safe}}</table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="heading"><b>Mars Hemispheres</b></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <img class="img-responsive"
+                   src="{{mars_data.full_cerberus_url}}" />
+                  <h4 class="heading">Cerberus Hemisphere Enhanced</h4>
+                  </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <img class="img-responsive"
+                   src="{{mars_data.full_schiaparelli_url}}" />
+                   <h4 class="heading">Schiaparelli Hemisphere Enhanced</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <img class="img-responsive"
+                   src="{{mars_data.full_syrtis_url}}" />
+                   <h4 class="heading">Syrtis Hemisphere Enhanced</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <img class="img-responsive"
+                   src="{{mars_data.full_valles_url}}" />
+                   <h4 class="heading">Valles Marineris Hemisphere Enhanced</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
